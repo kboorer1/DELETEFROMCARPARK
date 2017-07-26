@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-
+ import { TestService } from './api/test.service'; 
+ import { Configuration } from './app.constants';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [TestService, Configuration],
+  bootstrap: [AppComponent], 
+  exports: [Configuration]
 })
 export class AppModule { }
