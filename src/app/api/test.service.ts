@@ -10,20 +10,20 @@ export class TestService {
     private actionUrl: string;
     private headers: Headers;
     constructor(private _http: Http, private _configuration: Configuration) {
-        this.actionUrl = _configuration.ServerWithApiUrl + 'test/';
+        this.actionUrl = _configuration.ServerWithApiUrl + 'tests';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
     }
 
-    getTests(): Observable<any> {
-        return this._http.get(this.actionUrl)
-            .map((response: Response) => { return response; })
+    getTests(): Observable<any> { 
+        return this._http.get(this.actionUrl+'/gettests')
+            .map((response: Response) => { console.log('resp', response); return response; })
             .catch(this.handleError);
     }
 
     private handleError(error: Response) {
-        console.error(error);
+        console.error('error', error);
         return Observable.throw(error.json().error || 'Server error');
     }
 }

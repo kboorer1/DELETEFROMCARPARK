@@ -1,0 +1,9 @@
+$sidenav-font-size: 14px !default;
+$sidenav-font-color: green !default;
+$sidenav-bg-color: yellow !default;
+$sidenav-padding: 16px !default;
+$sidenav-item-height: 48px !default;
+$sidenav-line-height: $sidenav-item-height !default;
+ 
+$roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/" !default; // Needed to load font
+@import "../node_modules/materialize-css/sass/materialize";
