@@ -1,0 +1,17 @@
+$sidenav-font-size: 14px !default;
+$sidenav-font-color: white !default;
+$sidenav-bg-color: #005e91 !default;
+$sidenav-padding: 16px !default;
+$sidenav-item-height: 48px !default;
+$sidenav-line-height: $sidenav-item-height !default;
+
+$navbar-font-color: #fff !default;
+$navbar-brand-font-size: 2.1rem !default;
+
+$primary-color: #005e91 !default;
+$secondary-color: #005e91 !default;
+
+$roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/" !default; // Needed to load font
+@import "../node_modules/materialize-css/sass/materialize";
+
+/* https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss */ 

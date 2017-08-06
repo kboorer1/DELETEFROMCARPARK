@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="card col s12 m6 offset-m3">
+            <div class="card-title">Login</div>
+            <div class="card-content">
+                <div class="input-field">
+                    <input type="text" [(ngModel)]="user.Name" id="userName" [disabled]="loading > 0">
+                    <label *ngIf="user.Name || !validate" for="userName" [class.active]="user.Name">User Name *</label>
+                    <label *ngIf="!user.Name && validate" for="userName" class="invalid">User Name *</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" [(ngModel)]="user.Password" id="userPassword" [disabled]="loading > 0">
+                    <label *ngIf="user.Password || !validate" for="userPassword" [class.active]="user.Password">Password *</label>
+                    <label *ngIf="!user.Password && validate" for="userPassword" class="invalid">Password *</label>
+                </div>
+                <div class="row">
+                    <span *ngIf="invalidCredentials" class="invalid">Invalid username or password.</span>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <button class="btn" (click)="logUserIn()" [disabled]="loading > 0">Login</button>
+                    </div>
+                    <div class="col s6">
+                        <a (click)="forgotPassword()">Forgot password?</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <a (click)="registerUser()">Register</a>
+                    </div>
+                    <div class="col s6">
+                        <a (click)="continueAsGuest()">Continue as guest</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

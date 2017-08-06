@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { TestService } from './api/test.service';
-import { Configuration } from './app.constants'; 
+import { TestService } from '../../api/test.service';
+import { Configuration } from '../../app.constants'; 
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'login',
+  templateUrl: './login.component.html',
   providers: [TestService, Configuration]
 })
-export class AppComponent implements OnInit {
+export class LoginComponent implements OnInit {
   title = 'MAJOR PROJECT!';
   resp: any;
 
   constructor( private testService: TestService) {}
 
   ngOnInit() {
+      console.log('ng on in it');
     this.testService.getTests().subscribe( resp => {
       console.log(resp);
       this.resp = resp;
