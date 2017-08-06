@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="card col s12 m6 offset-m3">
+            <div class="card-title">Register</div>
+            <div class="card-content">
+                <div class="col s12 m6 input-field">
+                    <input type="text" id="registerFirstName" [(ngModel)]="user.FirstName" [disabled]="loading > 0">
+                    <label *ngIf="user.FirstName || !validate" for="registerFirstName" [class.active]="user.FirstName">First Name *</label>
+                    <label *ngIf="!user.FirstName && validate" for="registerFirstName" class="invalid">First Name *</label>
+                </div>
+                <div class="col s12 m6 input-field">
+                     <input type="text" id="registerLastName" [(ngModel)]="user.LastName" [disabled]="loading > 0">
+                    <label *ngIf="user.LastName || !validate" for="registerLastName" [class.active]="user.LastName">Last Name *</label>
+                    <label *ngIf="!user.LastName && validate" for="registerLastName" class="invalid">Last Name *</label>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

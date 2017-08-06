@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* used for validation in forms */
+.invalid {
+    color: red !important;
+} 
+
+/* <a> tags a clickable so we want the pointer cursor when we hover over link */
+a {
+    cursor: pointer;
+}
