@@ -8,7 +8,7 @@ import { Configuration } from './app.constants';
   providers: [TestService, Configuration]
 })
 export class AppComponent implements OnInit {
-  title = 'MAJOR PROJECT!';
+  title = 'VERY MAJOR PROJECT!';
   resp: any;
 
   constructor( private testService: TestService) {}
