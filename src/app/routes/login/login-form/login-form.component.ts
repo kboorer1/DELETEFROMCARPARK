@@ -58,5 +58,6 @@ export class LoginFormComponent {
         if (this.loading > 0) {
             return;
         }
+        this.router.navigate(['/guestdashboard']);
     }
 }

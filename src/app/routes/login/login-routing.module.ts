@@ -3,9 +3,11 @@ import { RouterModule, Routes, CanActivateChild } from '@angular/router';
 import { AuthGuard } from '../../api/auth-guard/auth-guard.service';
 import { LoginFormComponent } from './login-form/login-form.component'; 
 import { RegisterComponent } from './register/register.component';
+import { GuestDashboardComponent } from '../dashboard/guest/guestdashboard.component';
 const loginRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'guestdashboard', component: GuestDashboardComponent }
 ];
 
 @NgModule({
