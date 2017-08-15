@@ -13,6 +13,19 @@
                     <label *ngIf="user.LastName || !validate" for="registerLastName" [class.active]="user.LastName">Last Name *</label>
                     <label *ngIf="!user.LastName && validate" for="registerLastName" class="invalid">Last Name *</label>
                 </div>
+                <div class="col s12 m6 input-field">
+                    <input type="text" id="registerEmail" [(ngModel)]="user.EmailAddress" [disabled]="loadings >0">
+                    <label *ngIf="user.EmailAddress || !validate" for="registerEmail" [class.active]="user.EmailAddress">Email Address *</label>
+                    <label *ngIf="!user.EmailAddress && validate" for="registerEmail" class="invalid">Email Address *</label>
+                </div>
+                <div class="row col s12">
+                    <div class="col s6">
+                        <a (click)="cancelRegisteration()">Cancel</a>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn" (click)="registerUser()" [disabled]="loading > 0">Register</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div> 
