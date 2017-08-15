@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'; 
 
+import { User } from '../../../models'; 
 @Component({
     selector:'login-form',
     templateUrl: './login-form.component.html'
 })
 
 export class LoginFormComponent {
-    user: any = {
-        name: null,
-        password: null
-    }; //basic user oject for when a user enters their login details
+    user: User;
     validate = false; //variable used for validating 
     invalidCredentials = false; // variable used to show if user's details were invalid
     loading = 0; // loading variable to disable button when call is made to server
@@ -25,7 +23,7 @@ export class LoginFormComponent {
         if (this.loading > 0) {
             return;
         }
-        if (!this.user.Name || !this.user.password) {
+        if (!this.user.name || !this.user.password) {
             this.invalidLogin();
             return;
         }

@@ -4,14 +4,14 @@
             <div class="card-title">Login</div>
             <div class="card-content">
                 <div class="input-field">
-                    <input type="text" [(ngModel)]="user.Name" id="userName" [disabled]="loading > 0">
-                    <label *ngIf="user.Name || !validate" for="userName" [class.active]="user.Name">User Name *</label>
-                    <label *ngIf="!user.Name && validate" for="userName" class="invalid">User Name *</label>
+                    <input type="text" [(ngModel)]="user.name" id="userName" [disabled]="loading > 0">
+                    <label *ngIf="user.name || !validate" for="userName" [class.active]="user.name">User Name *</label>
+                    <label *ngIf="!user.name && validate" for="userName" class="invalid">User Name *</label>
                 </div>
                 <div class="input-field">
-                    <input type="password" [(ngModel)]="user.Password" id="userPassword" [disabled]="loading > 0">
-                    <label *ngIf="user.Password || !validate" for="userPassword" [class.active]="user.Password">Password *</label>
-                    <label *ngIf="!user.Password && validate" for="userPassword" class="invalid">Password *</label>
+                    <input type="password" [(ngModel)]="user.password" id="userPassword" [disabled]="loading > 0">
+                    <label *ngIf="user.password || !validate" for="userPassword" [class.active]="user.password">Password *</label>
+                    <label *ngIf="!user.password && validate" for="userPassword" class="invalid">Password *</label>
                 </div>
                 <div class="row">
                     <span *ngIf="invalidCredentials" class="invalid">Invalid username or password.</span>
