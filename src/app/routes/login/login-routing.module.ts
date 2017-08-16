@@ -3,11 +3,13 @@ import { RouterModule, Routes, CanActivateChild } from '@angular/router';
 import { AuthGuard } from '../../api/auth-guard/auth-guard.service';
 import { LoginFormComponent } from './login-form/login-form.component'; 
 import { RegisterComponent } from './register/register.component';
+<<<<<<< HEAD
 import { GuestDashboardComponent } from '../guest/guest-dashboard/guestdashboard.component';
+=======
+>>>>>>> parent of 665d24d3... Add guest dashboard page
 const loginRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'guestdashboard', component: GuestDashboardComponent }
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({
