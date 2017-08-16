@@ -61,5 +61,6 @@ export class LoginFormComponent implements OnInit {
         if (this.loading > 0) {
             return;
         }
+        this.router.navigate(['/guest']);
     }
 }

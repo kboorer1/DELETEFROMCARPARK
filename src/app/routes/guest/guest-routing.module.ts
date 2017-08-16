@@ -1,19 +1,16 @@
 import { NgModule, OnInit }             from '@angular/core';
 import { RouterModule, Routes, CanActivateChild } from '@angular/router';
 import { AuthGuard } from '../../api/auth-guard/auth-guard.service';
-import { LoginFormComponent } from './login-form/login-form.component'; 
-import { RegisterComponent } from './register/register.component'; 
-const loginRoutes: Routes = [
-  { path: 'login', component: LoginFormComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'guest', redirectTo: '/guest', pathMatch: 'full'}
+import { GuestDashboardComponent } from './guest-dashboard/guest-dashboard.component';
+const guestRoutes: Routes = [
+  { path: 'guest', component: GuestDashboardComponent },  
 ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(loginRoutes) ],
+  imports: [ RouterModule.forChild(guestRoutes) ],
   exports: [ RouterModule ]
 })
-export class LoginRoutingModule implements OnInit { 
+export class GuestRoutingModule implements OnInit { 
   ngOnInit() {
     console.log('routing module');
   }

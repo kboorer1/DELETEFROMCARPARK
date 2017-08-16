@@ -7,29 +7,25 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 
 import { TestService } from '../../api/test.service';
-import { CommonModule } from '@angular/common';  
-import { LoginFormComponent } from './login-form/login-form.component';
-import { LoginRoutingModule } from './login-routing.module'; 
-import { RegisterComponent } from './register/register.component'; 
-import { GuestModule } from '../guest/guest.module';
+import { CommonModule } from '@angular/common';   
+import { GuestDashboardComponent } from '../guest/guest-dashboard/guest-dashboard.component'; 
+import { GuestRoutingModule } from '../guest/guest-routing.module';
 @NgModule({
   declarations: [   
-    LoginFormComponent, 
-    RegisterComponent, 
+      GuestDashboardComponent
   ],
   imports: [  
     CommonModule,
     FormsModule,
     HttpModule,
     MaterializeModule,
-    LoginRoutingModule,
     AngularFontAwesomeModule,
-    GuestModule
+    GuestRoutingModule
   ],
   providers: [TestService],  
 })
-export class LoginModule implements OnInit{
+export class GuestModule implements OnInit{
   ngOnInit() {
-      console.log('login module');
+      console.log('guest module');
   }
 }

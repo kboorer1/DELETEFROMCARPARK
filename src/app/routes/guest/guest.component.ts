@@ -3,20 +3,16 @@ import { TestService } from '../../api/test.service';
 import { Configuration } from '../../app.constants'; 
 
 @Component({
-  selector: 'login', 
+  selector: 'guest',  
   providers: [TestService, Configuration]
 })
-export class LoginComponent implements OnInit {
+export class GuestComponent implements OnInit {
   title = 'MAJOR PROJECT!';
   resp: any;
 
   constructor( private testService: TestService) {}
 
-  ngOnInit() {
-    console.log('ng on in it');
-    this.testService.getTests().subscribe( resp => {
-      console.log(resp);
-      this.resp = resp;
-    })
+  ngOnInit() { 
+      console.log('guest component');
   }
 }
