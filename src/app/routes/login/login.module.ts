@@ -10,12 +10,8 @@ import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';  
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginRoutingModule } from './login-routing.module'; 
-<<<<<<< HEAD
 import { RegisterComponent } from './register/register.component';
 import { GuestDashboardComponent } from '../guest/guest-dashboard/guestdashboard.component'; 
-=======
-import { RegisterComponent } from './register/register.component'; 
->>>>>>> parent of 665d24d3... Add guest dashboard page
 @NgModule({
   declarations: [   
     LoginFormComponent, 

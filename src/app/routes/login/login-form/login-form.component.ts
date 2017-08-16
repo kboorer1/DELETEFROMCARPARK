@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'; 
 
 import { User } from '../../../models'; 
@@ -7,7 +7,7 @@ import { User } from '../../../models';
     templateUrl: './login-form.component.html'
 })
 
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
     user: User;
     validate = false; //variable used for validating 
     invalidCredentials = false; // variable used to show if user's details were invalid
@@ -15,7 +15,12 @@ export class LoginFormComponent {
 
 
     constructor(private route: ActivatedRoute,
-                private router: Router) {}
+                private router: Router) { 
+                }
+
+    ngOnInit() {
+        this.user = new User();
+    }
     /* when the user presses the login button does validation.
         sends data to server. Server returns if details are correct
         or incorrect. Goes to according methods */
