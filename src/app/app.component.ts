@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from './api/test.service';
 import { Configuration } from './app.constants'; 
+
 @Component({
+  moduleId: module.id,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
