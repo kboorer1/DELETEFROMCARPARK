@@ -12,6 +12,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginRoutingModule } from './login-routing.module'; 
 import { RegisterComponent } from './register/register.component'; 
 import { GuestModule } from '../guest/guest.module';
+import { ManagerModule } from '../manager/manager.module';
 @NgModule({
   declarations: [   
     LoginFormComponent, 
@@ -24,7 +25,8 @@ import { GuestModule } from '../guest/guest.module';
     MaterializeModule,
     LoginRoutingModule,
     AngularFontAwesomeModule,
-    GuestModule
+    GuestModule,
+    ManagerModule
   ],
   providers: [TestService],  
 })
