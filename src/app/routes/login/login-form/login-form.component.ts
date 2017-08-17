@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'; 
-
+import { AlertService, AuthenticationService } from '../../../api/index';
 import { User } from '../../../models'; 
 @Component({
+    moduleId: module.id,
     selector:'login-form',
     templateUrl: './login-form.component.html'
 })
 
 export class LoginFormComponent implements OnInit {
+    model: any = {};
+    returnUrl: string;
     user: User;
     validate = false; //variable used for validating 
     invalidCredentials = false; // variable used to show if user's details were invalid
@@ -15,11 +18,33 @@ export class LoginFormComponent implements OnInit {
 
 
     constructor(private route: ActivatedRoute,
-                private router: Router) { 
-                }
+                private router: Router,
+                private authenticationService: AuthenticationService,
+                private alertService: AlertService) { }
 
     ngOnInit() {
+        //reset login status
+        this.authenticationService.logout();
+
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
         this.user = new User();
+    }
+
+    login() {
+        this.loading ++;
+        console.log('model', this.model);
+        this.authenticationService.login(this.model.username, this.model.password)
+            .subscribe(
+                data => {
+                    console.log('data', data);
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading --;
+                });
     }
     /* when the user presses the login button does validation.
         sends data to server. Server returns if details are correct
@@ -73,5 +98,12 @@ export class LoginFormComponent implements OnInit {
             return;
         }
         this.router.navigate(['manager']);
+    }
+
+    loginAsRegisteredUser() {
+        if (this.loading > 0) {
+            return;
+        }
+        this.router.navigate(['/']);
     }
 }

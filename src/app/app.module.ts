@@ -14,10 +14,15 @@ import { AppComponent } from './app.component';
  import { LoginNavBarComponent } from './components/login-nav-bar/login-nav-bar.component';
 import { LoginModule } from './routes/login/login.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AlertComponent } from './api/auth-guard/alert.component';
+import { AuthGuard, AlertService, AuthenticationService, UserService, fakeBackendProvider } from './api/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
 @NgModule({
   declarations: [
      AppComponent, 
-     LoginNavBarComponent
+     LoginNavBarComponent,
+     AlertComponent
   ],
   imports: [
     LoginModule,
@@ -28,7 +33,19 @@ import { AppRoutingModule } from './app-routing.module';
     AngularFontAwesomeModule,
     AppRoutingModule
   ],
-  providers: [TestService, Configuration],
+  providers: [
+              TestService, 
+              Configuration,
+              AuthGuard,
+              AlertService,
+              AuthenticationService,
+              UserService,
+
+              // providers used to create fake backend
+              fakeBackendProvider,
+              MockBackend,
+              BaseRequestOptions
+            ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
