@@ -34,7 +34,11 @@ export class LoginFormComponent implements OnInit {
         }
         this.validate = false;
         this.invalidCredentials = false;
-        this.loading ++;
+        // this.loading ++;
+
+        if (this.user.name === 'manager') {
+            this.loginAsManager();
+        }
         // call to server then in subscribe if a vaild user go to the successful login method
         // if not a valid user go to invalid login method
     }
@@ -62,5 +66,12 @@ export class LoginFormComponent implements OnInit {
             return;
         }
         this.router.navigate(['/guest']);
+    }
+
+    loginAsManager() {
+        if (this.loading > 0) {
+            return;
+        }
+        this.router.navigate(['manager']);
     }
 }
