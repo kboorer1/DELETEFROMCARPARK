@@ -22,10 +22,9 @@ import { GuestRoutingModule } from '../guest/guest-routing.module';
     AngularFontAwesomeModule,
     GuestRoutingModule
   ],
-  providers: [TestService],  
+  providers: [TestService,
+            { provide: SessionService,
+              useFactory: sessionFactory,
+              deps: [XHRBackend, RequestOptions, UrlService, LoginCoordinator ]}],  
 })
-export class GuestModule implements OnInit{
-  ngOnInit() {
-      console.log('guest module');
-  }
-}
+export class GuestModule implements OnInit{}
