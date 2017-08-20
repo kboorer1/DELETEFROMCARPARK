@@ -1,16 +1,16 @@
 import { NgModule, OnInit, ModuleWithProviders }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../../api/index';
-import { GuestComponent } from './';
-import { GuestDashboardComponent } from './guest-dashboard/guest-dashboard.component';
-const guestRoutes: Routes = [
-  { path: '', component: GuestComponent,
+import { RegisterComponent } from './';
+import { RegisterFormComponent } from './register-form/register-form.component';
+const registerRoutes: Routes = [
+  { path: '', component: RegisterComponent,
     children: [
-      { path: 'guest', component: GuestDashboardComponent }
+      { path: 'register', component: RegisterFormComponent }
     ]}
 ];
 
-export const GuestRoutingModule: ModuleWithProviders = RouterModule.forChild(guestRoutes);
+export const RegisterRoutingModule: ModuleWithProviders = RouterModule.forChild(registerRoutes);
 
 
 /*

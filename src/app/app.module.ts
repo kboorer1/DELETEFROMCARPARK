@@ -18,11 +18,17 @@ import { AlertComponent } from './api/auth-guard/alert.component';
 import { AuthGuard, AlertService, AuthenticationService, UserService, fakeBackendProvider } from './api/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
+import { GuestComponent } from './routes/guest/guest.component';
+import { RegisterComponent } from './routes/register/register.component';
+import { LoginComponent } from './routes/login/login.component';
 @NgModule({
   declarations: [
      AppComponent, 
      LoginNavBarComponent,
-     AlertComponent
+     AlertComponent,
+     GuestComponent,
+     RegisterComponent,
+     LoginComponent,
   ],
   imports: [
     LoginModule,
@@ -31,7 +37,8 @@ import { BaseRequestOptions } from '@angular/http';
     HttpModule,
     MaterializeModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [
               TestService, 

@@ -10,13 +10,13 @@ import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';  
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginRoutingModule } from './login-routing.module'; 
-import { RegisterComponent } from './register/register.component'; 
+import { RegisterModule} from '../register/register.module'; 
 import { GuestModule } from '../guest/guest.module';
 import { ManagerModule } from '../manager/manager.module';
 @NgModule({
   declarations: [   
     LoginFormComponent, 
-    RegisterComponent, 
+  //  RegisterComponent, 
   ],
   imports: [  
     CommonModule,
@@ -26,7 +26,9 @@ import { ManagerModule } from '../manager/manager.module';
     LoginRoutingModule,
     AngularFontAwesomeModule,
     GuestModule,
-    ManagerModule
+    ManagerModule,
+    RegisterModule,
+    
   ],
   providers: [TestService],  
 })

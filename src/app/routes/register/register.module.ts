@@ -8,12 +8,12 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 
 import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';   
-import { GuestDashboardComponent } from '../guest/guest-dashboard/guest-dashboard.component'; 
-import { GuestRoutingModule } from '../guest/guest-routing.module';
+import { RegisterFormComponent } from './register-form/register-form.component'; 
+import { RegisterRoutingModule } from './register-routing.module';
 //import { AppModule} from '../../app.module';
 @NgModule({
   declarations: [   
-      GuestDashboardComponent
+      RegisterFormComponent
   ],
   imports: [  
     CommonModule,
@@ -21,10 +21,10 @@ import { GuestRoutingModule } from '../guest/guest-routing.module';
     HttpModule,
     MaterializeModule,
     AngularFontAwesomeModule,
-    GuestRoutingModule,
+    RegisterRoutingModule,
   //  AppModule,
   ],
   providers: [TestService,]
            
 })
-export class GuestModule {}
+export class RegisterModule {}
