@@ -1,9 +1,6 @@
-// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';  
-// import 'materialize-css';
-import { MaterializeModule } from 'angular2-materialize';
+import { HttpModule } from '@angular/http';   
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 
 import { TestService } from '../../api/test.service';
@@ -15,14 +12,12 @@ import { GuestModule } from '../guest/guest.module';
 import { ManagerModule } from '../manager/manager.module';
 @NgModule({
   declarations: [   
-    LoginFormComponent, 
-  //  RegisterComponent, 
+    LoginFormComponent,  
   ],
   imports: [  
     CommonModule,
     FormsModule,
-    HttpModule,
-    MaterializeModule,
+    HttpModule, 
     LoginRoutingModule,
     AngularFontAwesomeModule,
     GuestModule,
