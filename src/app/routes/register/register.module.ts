@@ -2,7 +2,7 @@
 import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';  
-import 'materialize-css';
+// import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 

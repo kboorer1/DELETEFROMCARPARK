@@ -11,7 +11,7 @@ $navbar-brand-font-size: 2.1rem !default;
 $primary-color: #005e91 !default;
 $secondary-color: #005e91 !default;
 
-$roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/" !default; // Needed to load font
-@import "../node_modules/materialize-css/sass/materialize";
+ $roboto-font-path: "../node_modules/materialize-css/dist/fonts/roboto/" !default; // Needed to load font
+ @import "../node_modules/materialize-css/sass/materialize";
 
 /* https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss */ 

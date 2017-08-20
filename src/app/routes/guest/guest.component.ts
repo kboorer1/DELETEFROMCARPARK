@@ -1,10 +1,6 @@
-import { Component, OnInit } from '@angular/core'; 
+import { Component } from '@angular/core'; 
 
 @Component({
   template:`<router-outlet></router-outlet>`   
 })
-export class GuestComponent implements OnInit { 
-  ngOnInit() {
-    
-  }
-}
+export class GuestComponent {}
