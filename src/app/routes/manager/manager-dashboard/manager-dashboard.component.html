@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="section">
         <div class="col s12">
             <ul class="tabs" materialize="tabs">
                 <li class="tab col s4"><a href="#lots">Parking Lots</a></li>
@@ -7,7 +7,50 @@
                 <li class="tab col s4"><a href="#requests">Lot Requests</a></li>
             </ul>
         </div>
-        <div id="lots" class="col s12">Parking Lots</div>
+    </div>
+    <div class="row">
+        <div id="lots" class="col s12">
+            <div class="col s12 m4">
+                <div class="col s12 blue darken-2">
+                    <h5 class="white-text">Lots</h5>
+                </div>
+                <div class="collection">
+                    <a class="collection-item">Lot 1</a>
+                    <a class="collection-item">Lot 2</a>
+                    <a class="collection-item">Lot 3</a>
+                </div>
+            </div>
+            <div class="col s12 m8">
+                <div class="col s12 blue">
+                    <h5 class="white-text">Lot Details</h5>
+                </div>
+                <div class="collection">
+                    <div class="col s12">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Operating hours</th>
+                                    <th>Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lot 1</td>
+                                    <td>University of Newcastle</td>
+                                    <td>8:00AM - 7:00PM</td>
+                                    <td>$3.00/hour</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col s12 blue">
+                    <h5 class="white-text">Lot Inspectors</h5>
+                </div>
+            </div>
+        </div>
         <div  id="inspectors" class="col s12">Inspectors</div>
         <div  id="requests" class="col s12">Lot Requests</div>
     </div>
