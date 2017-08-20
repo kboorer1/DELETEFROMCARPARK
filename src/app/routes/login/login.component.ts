@@ -3,7 +3,7 @@ import { TestService } from '../../api/test.service';
 import { Configuration } from '../../app.constants'; 
 
 @Component({
-  selector: 'login', 
+  template: `<router-outlet></router-outlet>`,
   providers: [TestService, Configuration]
 })
 export class LoginComponent implements OnInit {

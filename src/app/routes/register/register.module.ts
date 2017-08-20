@@ -8,11 +8,12 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 
 import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';   
-import { ManagerDashboardComponent } from '../manager/manager-dashboard/manager-dashboard.component'; 
-import { ManagerRoutingModule } from '../manager/manager-routing.module';
+import { RegisterFormComponent } from './register-form/register-form.component'; 
+import { RegisterRoutingModule } from './register-routing.module';
+//import { AppModule} from '../../app.module';
 @NgModule({
   declarations: [   
-      ManagerDashboardComponent
+      RegisterFormComponent
   ],
   imports: [  
     CommonModule,
@@ -20,12 +21,10 @@ import { ManagerRoutingModule } from '../manager/manager-routing.module';
     HttpModule,
     MaterializeModule,
     AngularFontAwesomeModule,
-    ManagerRoutingModule
+    RegisterRoutingModule,
+  //  AppModule,
   ],
-  providers: [TestService],  
+  providers: [TestService,]
+           
 })
-export class ManagerModule implements OnInit{
-  ngOnInit() {
-      console.log('manager module');
-  }
-}
+export class RegisterModule {}

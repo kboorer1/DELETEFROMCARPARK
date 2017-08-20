@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';  
-import 'materialize-css';
+import { HttpModule } from '@angular/http';   
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
@@ -18,11 +17,17 @@ import { AlertComponent } from './api/auth-guard/alert.component';
 import { AuthGuard, AlertService, AuthenticationService, UserService, fakeBackendProvider } from './api/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
+import { GuestComponent } from './routes/guest/guest.component';
+import { RegisterComponent } from './routes/register/register.component';
+import { LoginComponent } from './routes/login/login.component';
 @NgModule({
   declarations: [
      AppComponent, 
      LoginNavBarComponent,
-     AlertComponent
+     AlertComponent,
+     GuestComponent,
+     RegisterComponent,
+     LoginComponent,
   ],
   imports: [
     LoginModule,
@@ -31,7 +36,8 @@ import { BaseRequestOptions } from '@angular/http';
     HttpModule,
     MaterializeModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [
               TestService, 

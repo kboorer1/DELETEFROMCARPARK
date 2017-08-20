@@ -1,6 +1,6 @@
 import { NgModule, OnInit }             from '@angular/core';
 import { RouterModule, Routes, CanActivateChild } from '@angular/router';
-import { AuthGuard } from '../../api/auth-guard/auth-guard.service';
+import { AuthGuard } from '../../api/index';
 import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
 const managerRoutes: Routes = [
   { path: 'manager', component: ManagerDashboardComponent },  

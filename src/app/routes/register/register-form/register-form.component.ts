@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService, AlertService } from '../../../api/index';
 import { User } from '../../../models';
 @Component({
-    selector:'register',
-    templateUrl: './register.component.html'
+    selector:'register-form',
+    templateUrl: './register-form.component.html'
 })
 
-export class RegisterComponent {
+export class RegisterFormComponent {
     model: any = {};
     user = new User ();
 
