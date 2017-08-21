@@ -4,21 +4,21 @@
             <div class="card-title">Login</div>
             <div class="card-content">
                 <div class="input-field">
-                    <input type="text" [(ngModel)]="user.name" id="userName" [disabled]="loading > 0">
-                    <label *ngIf="user.name || !validate" for="userName" [class.active]="user.name">User Name *</label>
-                    <label *ngIf="!user.name && validate" for="userName" class="invalid">User Name *</label>
+                    <input type="text" [(ngModel)]="model.username" id="userName" [disabled]="loading > 0">
+                    <label *ngIf="model.username || !validate" for="userName" [class.active]="model.username">User Name *</label>
+                    <label *ngIf="!model.username && validate" for="userName" class="invalid">User Name *</label>
                 </div>
                 <div class="input-field">
-                    <input type="password" [(ngModel)]="user.password" id="userPassword" [disabled]="loading > 0">
-                    <label *ngIf="user.password || !validate" for="userPassword" [class.active]="user.password">Password *</label>
-                    <label *ngIf="!user.password && validate" for="userPassword" class="invalid">Password *</label>
+                    <input type="password" [(ngModel)]="model.password" id="userPassword" [disabled]="loading > 0">
+                    <label *ngIf="model.password || !validate" for="userPassword" [class.active]="model.password">Password *</label>
+                    <label *ngIf="!model.password && validate" for="userPassword" class="invalid">Password *</label>
                 </div>
                 <div class="row">
                     <span *ngIf="invalidCredentials" class="invalid">Invalid username or password.</span>
                 </div>
                 <div class="row">
                     <div class="col s6">
-                        <button class="btn" (click)="logUserIn()" [disabled]="loading > 0">Login</button>
+                        <button class="btn" (click)="login()" [disabled]="loading > 0">Login</button>
                     </div>
                     <div class="col s6">
                         <a (click)="forgotPassword()">Forgot password?</a>

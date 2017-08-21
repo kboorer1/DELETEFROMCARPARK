@@ -1,13 +1,15 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
-
  const routes: Routes = [ 
-   { path: '', redirectTo: '/login', pathMatch: 'full' }, 
+   { path: '', redirectTo: '/login', pathMatch: 'full' },
+   { path: 'login', loadChildren: '/routes/login/login.module#LoginModule'},
+   { path: 'guest', loadChildren: '/routes/guest/guest.module#GuestModule' },
+   { path: 'register', loadChildren: '/routes/register/register.module#RegisterModule' }
  ]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes,
-      //{ enableTracing: true }
+      { enableTracing: true }
     )
   ],
   exports: [ RouterModule ]

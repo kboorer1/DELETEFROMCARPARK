@@ -14,9 +14,19 @@
                     <label *ngIf="!user.LastName && validate" for="registerLastName" class="invalid">Last Name *</label>
                 </div>
                 <div class="col s12 m6 input-field">
-                    <input type="text" id="registerEmail" [(ngModel)]="user.EmailAddress" [disabled]="loadings >0">
+                    <input type="text" id="registerEmail" [(ngModel)]="user.EmailAddress" [disabled]="loading >0">
                     <label *ngIf="user.EmailAddress || !validate" for="registerEmail" [class.active]="user.EmailAddress">Email Address *</label>
                     <label *ngIf="!user.EmailAddress && validate" for="registerEmail" class="invalid">Email Address *</label>
+                </div>
+                 <div class="col s12 m6 input-field">
+                    <input type="text" id="registeredUserName" [(ngModel)]="user.username" [disabled]="loading >0">
+                    <label *ngIf="user.username || !validate" for="registeredUserName" [class.active]="user.username">Username *</label>
+                    <label *ngIf="!user.username && validate" for="registeredUserName" class="invalid">Username *</label>
+                </div>
+                 <div class="col s12 m6 input-field">
+                    <input type="password" id="registerPassword" [(ngModel)]="user.password" [disabled]="loading >0">
+                    <label *ngIf="user.password || !validate" for="registerPassword" [class.active]="user.password">Password *</label>
+                    <label *ngIf="!user.password && validate" for="registerPassword" class="invalid">Password *</label>
                 </div>
                 <div class="row col s12">
                     <div class="col s6">

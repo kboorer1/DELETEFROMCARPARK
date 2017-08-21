@@ -1,25 +1,17 @@
-import { NgModule, OnInit }             from '@angular/core';
+import { NgModule, OnInit, ModuleWithProviders }             from '@angular/core';
 import { RouterModule, Routes, CanActivateChild } from '@angular/router';
-import { AuthGuard } from '../../api/auth-guard/auth-guard.service';
+import { AuthGuard } from '../../api/index';
 import { LoginFormComponent } from './login-form/login-form.component'; 
-import { RegisterComponent } from './register/register.component'; 
+import { ManagerComponent } from '../manager/manager.component';
+import { LoginComponent } from './login.component';
 const loginRoutes: Routes = [
-  { path: 'login', component: LoginFormComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'guest', redirectTo: '/guest', pathMatch: 'full'},
-  { path: 'manager', redirectTo: '/manager', pathMatch: 'full'}
+  { path: '', component: LoginComponent,
+     children: [
+       { path: 'login', component: LoginFormComponent}
+     ]} 
 ];
 
-@NgModule({
-  imports: [ RouterModule.forChild(loginRoutes) ],
-  exports: [ RouterModule ]
-})
-export class LoginRoutingModule implements OnInit { 
-  ngOnInit() {
-    console.log('routing module');
-  }
-}
-
+export const LoginRoutingModule: ModuleWithProviders = RouterModule.forChild(loginRoutes);
 
 /*
 Copyright 2017 Google Inc. All Rights Reserved.

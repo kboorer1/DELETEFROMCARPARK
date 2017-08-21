@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';  
-import 'materialize-css';
+import { HttpModule } from '@angular/http';   
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
@@ -14,10 +13,21 @@ import { AppComponent } from './app.component';
  import { LoginNavBarComponent } from './components/login-nav-bar/login-nav-bar.component';
 import { LoginModule } from './routes/login/login.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AlertComponent } from './api/auth-guard/alert.component';
+import { AuthGuard, AlertService, AuthenticationService, UserService, fakeBackendProvider } from './api/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+import { GuestComponent } from './routes/guest/guest.component';
+import { RegisterComponent } from './routes/register/register.component';
+import { LoginComponent } from './routes/login/login.component';
 @NgModule({
   declarations: [
      AppComponent, 
-     LoginNavBarComponent
+     LoginNavBarComponent,
+     AlertComponent,
+     GuestComponent,
+     RegisterComponent,
+     LoginComponent,
   ],
   imports: [
     LoginModule,
@@ -26,9 +36,22 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     MaterializeModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
-  providers: [TestService, Configuration],
+  providers: [
+              TestService, 
+              Configuration,
+              AuthGuard,
+              AlertService,
+              AuthenticationService,
+              UserService,
+
+              // providers used to create fake backend
+              fakeBackendProvider,
+              MockBackend,
+              BaseRequestOptions
+            ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
