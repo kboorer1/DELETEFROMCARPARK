@@ -4,7 +4,7 @@
             <div class="card-title">Login</div>
             <div class="card-content">
                 <div class="input-field">
-                    <input type="text" [(ngModel)]="model.username" id="userName" [disabled]="loading > 0">
+                    <input type="text" [(ngModel)]="model.username" id="userName" placeholder='f2b9;' [disabled]="loading > 0">
                     <label *ngIf="model.username || !validate" for="userName" [class.active]="model.username">User Name *</label>
                     <label *ngIf="!model.username && validate" for="userName" class="invalid">User Name *</label>
                 </div>
