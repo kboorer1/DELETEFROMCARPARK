@@ -1,0 +1,20 @@
+<div *ngIf="parkingLot">
+    <table class="responsive-table">
+        <thead>
+            <tr class="grey-text text-darken-2">
+                <th>Name</th>
+                <th>Location</th>
+                <th>Operating hours</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{parkingLot.lotName}}</td>
+                <td>{{parkingLot.location}}</td>
+                <td>{{parkingLot.openTime}} - {{parkingLot.closeTime}}</td>
+                <td>{{parkingLot.cost}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

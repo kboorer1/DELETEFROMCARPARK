@@ -10,9 +10,12 @@ import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';   
 import { ManagerDashboardComponent } from '../manager/manager-dashboard/manager-dashboard.component'; 
 import { ManagerRoutingModule } from '../manager/manager-routing.module';
+import { ParkingLotDetailComponent } from './manager-dashboard/parking-lot-detail.component';
+
 @NgModule({
   declarations: [   
-      ManagerDashboardComponent
+      ManagerDashboardComponent,
+      ParkingLotDetailComponent
   ],
   imports: [  
     CommonModule,
