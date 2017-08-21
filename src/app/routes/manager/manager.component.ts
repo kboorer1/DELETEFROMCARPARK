@@ -1,18 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TestService } from '../../api/test.service';
-import { Configuration } from '../../app.constants'; 
+import { Component, OnInit } from '@angular/core'; 
 
 @Component({
-  selector: 'manager',  
-  providers: [TestService, Configuration]
+  template: `<router-outlet></router-outlet>`
 })
-export class ManagerComponent implements OnInit {
-  title = 'MAJOR PROJECT!';
-  resp: any;
-
-  constructor( private testService: TestService) {}
-
-  ngOnInit() { 
-      console.log('manager component');
-  }
-}
+export class ManagerComponent {}

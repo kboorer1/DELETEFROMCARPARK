@@ -10,7 +10,7 @@ const guestRoutes: Routes = [
     ]}
 ];
 
-export const GuestRoutingModule: ModuleWithProviders = RouterModule.forChild(guestRoutes);
+export const guestRouting: ModuleWithProviders = RouterModule.forChild(guestRoutes);
 
 
 /*

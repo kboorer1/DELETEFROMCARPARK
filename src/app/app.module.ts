@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
  import { Configuration } from './app.constants';
  import { LoginNavBarComponent } from './components/login-nav-bar/login-nav-bar.component';
 import { LoginModule } from './routes/login/login.module';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { AlertComponent } from './api/auth-guard/alert.component';
 import { AuthGuard, AlertService, AuthenticationService, UserService, fakeBackendProvider } from './api/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -20,14 +20,13 @@ import { BaseRequestOptions } from '@angular/http';
 import { GuestComponent } from './routes/guest/guest.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { LoginComponent } from './routes/login/login.component';
+import { AppRoutingModule } from'./app-routing.module';
 @NgModule({
   declarations: [
      AppComponent, 
-     LoginNavBarComponent,
-     AlertComponent,
-     GuestComponent,
-     RegisterComponent,
-     LoginComponent,
+    LoginNavBarComponent,
+     AlertComponent, 
+     RegisterComponent, 
   ],
   imports: [
     LoginModule,
@@ -35,9 +34,9 @@ import { LoginComponent } from './routes/login/login.component';
     FormsModule,
     HttpModule,
     MaterializeModule,
-    AngularFontAwesomeModule,
-    AppRoutingModule,
-    
+    AngularFontAwesomeModule, 
+    RouterModule,
+    AppRoutingModule    
   ],
   providers: [
               TestService, 
