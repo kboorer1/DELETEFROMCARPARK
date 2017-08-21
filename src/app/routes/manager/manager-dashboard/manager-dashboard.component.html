@@ -21,7 +21,8 @@
                                 <span class="card-title white-text">Lots</span>
                             </div>
                             <ul class="collection">
-                                <li *ngFor="let lot of lots" class="collection-item">
+                                <li *ngFor="let lot of lots" class="collection-item"
+                                    (click)="onSelect(lot)">
                                     <span>{{lot.lotName}}</span>
                                 </li>
                             </ul> 
@@ -36,24 +37,7 @@
                             </div>
                             <ul class="collection">
                                 <li class="collection-item">
-                                    <table class="responsive-table">
-                                        <thead>
-                                            <tr class="grey-text text-darken-2">
-                                                <th>Name</th>
-                                                <th>Location</th>
-                                                <th>Operating hours</th>
-                                                <th>Cost</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Lot 1</td>
-                                                <td>University of Newcastle</td>
-                                                <td>8:00AM - 7:00PM</td>
-                                                <td>$3.00/hour</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <lot-detail [lot]="selectedLot"></lot-detail>
                                 </li>
                             </ul> 
                         </div>

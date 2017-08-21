@@ -12,12 +12,17 @@ import { LotService } from './lot-service';
 export class ManagerDashboardComponent implements OnInit {
   loading = 0;
   lots: Lot[];
+  selectedLot: Lot;
 
   constructor(private lotService: LotService) { }
 
   getLots(): void {
     this.lotService.getLots().then(lots =>
       this.lots = lots);
+  }
+
+  onSelect(lot: Lot): void {
+    this.selectedLot= lot;
   }
 
   ngOnInit() {

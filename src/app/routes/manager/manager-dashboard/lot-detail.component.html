@@ -1,0 +1,20 @@
+<div *ngIf="lot">
+    <table class="responsive-table">
+        <thead>
+            <tr class="grey-text text-darken-2">
+                <th>Name</th>
+                <th>Location</th>
+                <th>Operating hours</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{lot.lotName}}</td>
+                <td>{{lot.location}}</td>
+                <td>{{lot.openTime}} - {{lot.closeTime}}</td>
+                <td>{{lot.cost}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
