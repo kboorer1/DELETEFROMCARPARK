@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor( private testService: TestService) {}
 
   ngOnInit() {
-    console.log('ng on in it');
+    console.log('ng on in it login component');
     this.testService.getTests().subscribe( resp => {
       console.log(resp);
       this.resp = resp;
