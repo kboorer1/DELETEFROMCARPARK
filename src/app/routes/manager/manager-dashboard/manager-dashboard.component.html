@@ -18,12 +18,12 @@
                         <!-- Lots card -->
                         <div class="card blue">
                             <div class="card-content">
-                                <span class="card-title white-text">Lots</span>
+                                <span class="card-title white-text">Parking Lots</span>
                             </div>
                             <ul class="collection">
-                                <li *ngFor="let lot of lots" class="collection-item"
-                                    (click)="onSelect(lot)">
-                                    <span>{{lot.lotName}}</span>
+                                <li *ngFor="let parkingLot of parkingLots" class="collection-item"
+                                    (click)="onSelect(parkingLot)">
+                                    <span>{{parkingLot.lotName}}</span>
                                 </li>
                             </ul> 
                         </div>
@@ -37,7 +37,7 @@
                             </div>
                             <ul class="collection">
                                 <li class="collection-item">
-                                    <lot-detail [lot]="selectedLot"></lot-detail>
+                                    <parking-lot-detail [parkingLot]="selectedParkingLot"></parking-lot-detail>
                                 </li>
                             </ul> 
                         </div>

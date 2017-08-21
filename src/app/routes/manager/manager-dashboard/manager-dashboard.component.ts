@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Lot } from '../../../models/lot';
-import { LotService } from './lot-service';
+import { ParkingLot } from '../../../models/parking-lot';
+import { ParkingLotService } from './parking-lot-service';
 
 @Component({
     selector: 'managerdashboard',
     templateUrl: './manager-dashboard.component.html',
-    providers: [LotService]
+    providers: [ParkingLotService]
 })
 
 export class ManagerDashboardComponent implements OnInit {
   loading = 0;
-  lots: Lot[];
-  selectedLot: Lot;
+  parkingLots: ParkingLot[];
+  selectedParkingLot: ParkingLot;
 
-  constructor(private lotService: LotService) { }
+  constructor(private parkingLotService: ParkingLotService) { }
 
-  getLots(): void {
-    this.lotService.getLots().then(lots =>
-      this.lots = lots);
+  getParkingLots(): void {
+    this.parkingLotService.getParkingLots().then(parkingLots =>
+      this.parkingLots = parkingLots);
   }
 
-  onSelect(lot: Lot): void {
-    this.selectedLot= lot;
+  onSelect(parkingLot: ParkingLot): void {
+    this.selectedParkingLot = parkingLot;
   }
 
   ngOnInit() {
     console.log('dashboard');
-    this.getLots();
+    this.getParkingLots();
   }
 }
 

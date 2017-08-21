@@ -1,4 +1,4 @@
-export class Lot {
+export class ParkingLot {
   id: number;
   lotName: string;
   location: string;
