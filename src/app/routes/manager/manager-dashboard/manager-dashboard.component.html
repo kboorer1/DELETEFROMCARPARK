@@ -8,50 +8,94 @@
             </ul>
         </div>
     </div>
-    <div class="row">
-        <div id="lots" class="col s12">
-            <div class="col s12 m4">
-                <div class="col s12 blue darken-2">
-                    <h5 class="white-text">Lots</h5>
-                </div>
-                <div class="collection">
-                    <a class="collection-item">Lot 1</a>
-                    <a class="collection-item">Lot 2</a>
-                    <a class="collection-item">Lot 3</a>
-                </div>
-            </div>
-            <div class="col s12 m8">
-                <div class="col s12 blue">
-                    <h5 class="white-text">Lot Details</h5>
-                </div>
-                <div class="collection">
-                    <div class="col s12">
-                        <table class="responsive-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Location</th>
-                                    <th>Operating hours</th>
-                                    <th>Cost</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Lot 1</td>
-                                    <td>University of Newcastle</td>
-                                    <td>8:00AM - 7:00PM</td>
-                                    <td>$3.00/hour</td>
-                                </tr>
-                            </tbody>
-                        </table>
+    <!-- Lots tab -->
+    <div id="lots">
+        <div class="card white">
+            <div class="row">
+                <div class="card-content">
+                    <!-- Left-side content -->
+                    <div class="col s12 l4">
+                        <!-- Lots card -->
+                        <div class="card blue">
+                            <div class="card-content">
+                                <span class="card-title white-text">Lots</span>
+                            </div>
+                            <ul class="collection">
+                                <li *ngFor="let lot of lots" class="collection-item">
+                                    <span>{{lot.location}}</span>
+                                </li>
+                            </ul> 
+                        </div>
                     </div>
-                </div>
-                <div class="col s12 blue">
-                    <h5 class="white-text">Lot Inspectors</h5>
+                    <!-- Right-side content -->
+                    <div class="col s12 l8">
+                        <!-- Lot Details card -->
+                        <div class="card blue">
+                            <div class="card-content">
+                                <span class="card-title white-text">Lot Details</span>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item">
+                                    <table class="responsive-table">
+                                        <thead>
+                                            <tr class="grey-text text-darken-2">
+                                                <th>Name</th>
+                                                <th>Location</th>
+                                                <th>Operating hours</th>
+                                                <th>Cost</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Lot 1</td>
+                                                <td>University of Newcastle</td>
+                                                <td>8:00AM - 7:00PM</td>
+                                                <td>$3.00/hour</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            </ul> 
+                        </div>
+                        <!-- Inspectors card -->
+                        <div class="card blue">
+                            <div class="card-content">
+                                <span class="card-title white-text">Inspectors</span>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item avatar">
+                                    <!--<img src="images/yuna.jpg" alt="" class="circle">-->
+                                    <i class="material-icons circle">account_box</i>
+                                    <span class="title">Charles Frank</span>
+                                    <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+                                </li>
+                                <li class="collection-item avatar">
+                                    <!--<img src="images/yuna.jpg" alt="" class="circle">-->
+                                    <i class="material-icons circle">account_box</i>
+                                    <span class="title">Katie Boorer</span>
+                                    <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div  id="inspectors" class="col s12">Inspectors</div>
-        <div  id="requests" class="col s12">Lot Requests</div>
     </div>
-</div>  
+    <!-- Inspectors tab -->
+    <div id="inspectors" class="col s12">
+        <div class="card grey lighten-3">
+            <div class="card-content">
+                Inspectors
+            </div>
+        </div>
+    </div>
+    <!-- Requests tab -->
+    <div id="requests" class="col s12">
+        <div class="card grey lighten-3">
+            <div class="card-content">
+                Requests
+            </div>
+        </div>
+    </div>
+</div>
