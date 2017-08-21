@@ -6,19 +6,21 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';  
 import { LoginFormComponent } from './login-form/login-form.component';
-import { LoginRoutingModule } from './login-routing.module'; 
+import { loginRouting } from './login-routing.module'; 
 import { RegisterModule} from '../register/register.module'; 
 import { GuestModule } from '../guest/guest.module';
 import { ManagerModule } from '../manager/manager.module';
+import { LoginComponent } from './login.component';
 @NgModule({
   declarations: [   
-    LoginFormComponent,  
+    LoginFormComponent, 
+    LoginComponent 
   ],
   imports: [  
     CommonModule,
     FormsModule,
     HttpModule, 
-    LoginRoutingModule,
+    loginRouting,
     AngularFontAwesomeModule,
     GuestModule,
     ManagerModule,

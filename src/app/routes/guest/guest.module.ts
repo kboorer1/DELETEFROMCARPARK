@@ -4,16 +4,18 @@ import { HttpModule } from '@angular/http';
 import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';   
 import { GuestDashboardComponent } from '../guest/guest-dashboard/guest-dashboard.component'; 
-import { GuestRoutingModule } from '../guest/guest-routing.module'; 
+import { guestRouting } from '../guest/guest-routing.module'; 
+import { GuestComponent } from './guest.component';
 @NgModule({
   declarations: [   
+    GuestComponent,
       GuestDashboardComponent
   ],
   imports: [  
     CommonModule,
     FormsModule,
     HttpModule,  
-    GuestRoutingModule, 
+    guestRouting, 
   ],
   providers: [TestService,]
            

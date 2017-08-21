@@ -1,19 +1,16 @@
-// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';  
-// import 'materialize-css';
-import { MaterializeModule } from 'angular2-materialize';
+import { HttpModule } from '@angular/http';   
 
-import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 
 import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';   
 import { ManagerDashboardComponent } from '../manager/manager-dashboard/manager-dashboard.component'; 
-import { ManagerRoutingModule } from '../manager/manager-routing.module';
+import { managerRouting } from '../manager/manager-routing.module';
 import { ParkingLotDetailComponent } from './manager-dashboard/parking-lot-detail.component';
-
+import { ManagerComponent } from './manager.component';
 @NgModule({
   declarations: [   
+    ManagerComponent,
       ManagerDashboardComponent,
       ParkingLotDetailComponent
   ],
@@ -21,14 +18,8 @@ import { ParkingLotDetailComponent } from './manager-dashboard/parking-lot-detai
     CommonModule,
     FormsModule,
     HttpModule,
-    MaterializeModule,
-    AngularFontAwesomeModule,
-    ManagerRoutingModule
+    managerRouting
   ],
   providers: [TestService],  
 })
-export class ManagerModule implements OnInit{
-  ngOnInit() {
-      console.log('manager module');
-  }
-}
+export class ManagerModule {}
