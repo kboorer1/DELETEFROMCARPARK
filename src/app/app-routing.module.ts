@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; 
+import { ModuleWithProviders } from '@angular/core';
+import { LoginComponent } from './routes/login/login.component';
+import { GuestComponent } from './routes/guest/guest.component';
+import { ManagerComponent } from './routes/manager/manager.component';
  const routes: Routes = [ 
-   { path: '', redirectTo: '/login', pathMatch: 'full' },
-   { path: 'login', loadChildren: '/routes/login/login.module#LoginModule'},
-   { path: 'guest', loadChildren: '/routes/guest/guest.module#GuestModule' },
-   { path: 'register', loadChildren: '/routes/register/register.module#RegisterModule' }
+   { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '**', redirectTo: 'login' },
+    { path: 'login', component: LoginComponent},
+    { path: 'guest', component: GuestComponent},
+    { path: 'register', component: ManagerComponent }
  ]
 
-@NgModule({
-  imports: [ RouterModule.forRoot(routes,
-      { enableTracing: true }
-    )
-  ],
-  exports: [ RouterModule ]
-})
-
-export class AppRoutingModule {}
-
+ @NgModule({
+   imports: [RouterModule.forRoot(routes) ],
+   exports: [RouterModule]
+ })
+ export class AppRoutingModule{}
+ // export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 
 /*
 Copyright 2017 Google Inc. All Rights Reserved.

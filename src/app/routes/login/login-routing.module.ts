@@ -11,7 +11,7 @@ const loginRoutes: Routes = [
      ]} 
 ];
 
-export const LoginRoutingModule: ModuleWithProviders = RouterModule.forChild(loginRoutes);
+export const loginRouting: ModuleWithProviders = RouterModule.forChild(loginRoutes);
 
 /*
 Copyright 2017 Google Inc. All Rights Reserved.

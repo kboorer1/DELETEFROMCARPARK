@@ -1,20 +1,17 @@
-import { NgModule, OnInit }             from '@angular/core';
+import { NgModule, OnInit , ModuleWithProviders}             from '@angular/core';
 import { RouterModule, Routes, CanActivateChild } from '@angular/router';
 import { AuthGuard } from '../../api/index';
+import { ManagerComponent } from './';
 import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
 const managerRoutes: Routes = [
-  { path: 'manager', component: ManagerDashboardComponent },  
+  { path: '', component: ManagerComponent,
+    children: [
+      { path: 'manager', component: ManagerDashboardComponent }
+    ]}  
 ];
 
-@NgModule({
-  imports: [ RouterModule.forChild(managerRoutes) ],
-  exports: [ RouterModule ]
-})
-export class ManagerRoutingModule implements OnInit { 
-  ngOnInit() {
-    console.log('routing module');
-  }
-}
+export const managerRouting: ModuleWithProviders = RouterModule.forChild(managerRoutes);
+
 
 
 /*
