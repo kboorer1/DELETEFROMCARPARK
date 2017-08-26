@@ -1,16 +1,20 @@
-import { NgModule, OnInit, ModuleWithProviders }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule, OnInit }             from '@angular/core';
+import { RouterModule, Routes, CanActivateChild } from '@angular/router';
 import { AuthGuard } from '../../api/index';
-import { GuestComponent } from './';
-import { GuestDashboardComponent } from './guest-dashboard/guest-dashboard.component';
+import { GuestDashboardComponent } from './guest-dashboard/guest-dashboard.component'
 const guestRoutes: Routes = [
-  { path: '', component: GuestComponent,
-    children: [
-      { path: 'guest', component: GuestDashboardComponent }
-    ]}
+  { path: 'guest', component: GuestDashboardComponent },
 ];
 
-export const guestRouting: ModuleWithProviders = RouterModule.forChild(guestRoutes);
+@NgModule({
+  imports: [ RouterModule.forChild(guestRoutes) ],
+  exports: [ RouterModule ]
+})
+export class GuestRoutingModule implements OnInit { 
+  ngOnInit() {
+    console.log('routing module');
+  }
+}
 
 
 /*
