@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ParkingLot } from '../../../models/parking-lot';
 import { ParkingLotService } from './parking-lot-service';
 import { MaterializeAction } from 'angular2-materialize';
-import { Materialize } from 'angular2-materialize';
 
 @Component({
     selector: 'managerdashboard',
