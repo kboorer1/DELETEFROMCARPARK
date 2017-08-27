@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ParkingLot } from '../../../../models';
+import { ParkingLot } from '../../../models/parking-lot';
 
 @Component({
     selector: 'parking-lot-detail',

@@ -1,8 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ParkingLot } from '../../../models';
-import { ParkingLotService } from '../../../api';
-// import { ParkingLotService } from './parking-lot-service';
+import { ParkingLot } from '../../../models/parking-lot';
+import { ParkingLotService } from './parking-lot-service';
 import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
@@ -16,15 +15,14 @@ export class ManagerDashboardComponent implements OnInit {
   parkingLots: ParkingLot[];
   selectedParkingLot: ParkingLot;
   modalActions = new EventEmitter<string|MaterializeAction>();
+    openModal() {
+      this.modalActions.emit({action:"modal",params:['open']});
+    }
+    closeModal() {
+      this.modalActions.emit({action:"modal",params:['close']});
+    }
 
   constructor(private parkingLotService: ParkingLotService) { }
-    
-  openModal() {
-    this.modalActions.emit({action:"modal",params:['open']});
-  }
-  closeModal() {
-    this.modalActions.emit({action:"modal",params:['close']});
-  }
 
   getParkingLots(): void {
     this.parkingLotService.getParkingLots().then(parkingLots =>
