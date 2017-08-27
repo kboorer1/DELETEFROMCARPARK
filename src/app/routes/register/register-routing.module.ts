@@ -1,16 +1,20 @@
 import { NgModule, OnInit, ModuleWithProviders }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../../api/index';
-import { RegisterComponent } from './';
 import { RegisterFormComponent } from './register-form/register-form.component';
-const registerRoutes: Routes = [
-  { path: '', component: RegisterComponent,
-    children: [
-      { path: 'register', component: RegisterFormComponent }
-    ]}
+const registerRoutes: Routes = [ 
+      { path: 'register', component: RegisterFormComponent } 
 ];
 
-export const RegisterRoutingModule: ModuleWithProviders = RouterModule.forChild(registerRoutes);
+@NgModule({
+  imports: [ RouterModule.forChild(registerRoutes) ],
+  exports: [ RouterModule ]
+})
+export class RegisterRoutingModule implements OnInit { 
+  ngOnInit() {
+    console.log('routing module');
+  }
+}
 
 
 /*

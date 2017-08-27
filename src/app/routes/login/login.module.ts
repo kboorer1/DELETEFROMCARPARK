@@ -1,31 +1,28 @@
+// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';   
+import { HttpModule } from '@angular/http';  
 
-import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome'; 
 import { TestService } from '../../api/test.service';
 import { CommonModule } from '@angular/common';  
 import { LoginFormComponent } from './login-form/login-form.component';
-import { loginRouting } from './login-routing.module'; 
-import { RegisterModule} from '../register/register.module'; 
+import { LoginRoutingModule } from './login-routing.module'; 
+import { RegisterComponent } from '../register/register.component'; 
 import { GuestModule } from '../guest/guest.module';
 import { ManagerModule } from '../manager/manager.module';
-import { LoginComponent } from './login.component';
+import { RegisterModule } from '../register/register.module';
 @NgModule({
   declarations: [   
-    LoginFormComponent, 
-    LoginComponent 
+    LoginFormComponent,  
   ],
   imports: [  
     CommonModule,
     FormsModule,
-    HttpModule, 
-    loginRouting,
-    AngularFontAwesomeModule,
-    GuestModule,
-    ManagerModule,
+    HttpModule,
+    LoginRoutingModule,
     RegisterModule,
-    
+    GuestModule,
+    ManagerModule
   ],
   providers: [TestService],  
 })

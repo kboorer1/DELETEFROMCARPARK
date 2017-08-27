@@ -1,23 +1,27 @@
+// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';   
+import { HttpModule } from '@angular/http';  
 import { TestService } from '../../api/test.service';
-import { CommonModule } from '@angular/common';   
-import { GuestDashboardComponent } from '../guest/guest-dashboard/guest-dashboard.component'; 
-import { guestRouting } from '../guest/guest-routing.module'; 
+import { CommonModule } from '@angular/common';  
 import { GuestComponent } from './guest.component';
+import { GuestDashboardComponent } from './guest-dashboard/guest-dashboard.component'; 
+import { GuestRoutingModule } from './guest-routing.module';
 @NgModule({
   declarations: [   
     GuestComponent,
-      GuestDashboardComponent
+    GuestDashboardComponent
   ],
   imports: [  
     CommonModule,
     FormsModule,
-    HttpModule,  
-    guestRouting, 
+    HttpModule,
+    GuestRoutingModule,
   ],
-  providers: [TestService,]
-           
+  providers: [TestService],  
 })
-export class GuestModule {}
+export class GuestModule implements OnInit{
+  ngOnInit() {
+      console.log('login module');
+  }
+}
