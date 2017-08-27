@@ -16,17 +16,17 @@
                     <!-- Left-side content -->
                     <div class="col s12 l4">
                         <!-- Lots card -->
-                        <div class="card blue">
-                            <div class="card-content">
-                                <span class="card-title white-text">Parking Lots</span>
-                            </div>
-                            <ul class="collection">
-                                <li *ngFor="let parkingLot of parkingLots" class="collection-item"
-                                    (click)="onSelect(parkingLot)">
-                                    <span>{{parkingLot.lotName}}</span>
-                                </li>
-                            </ul> 
+                        <div class="input-field">  
+                            <input type="text" placeholder="&#xF002; Search parking lots"
+                                style="font-family: Arial, FontAwesome"/>
                         </div>
+                        <ul class="collection card">
+                            <li *ngFor="let parkingLot of parkingLots" class="collection-item"
+                                [class.active]="parkingLot === selectedParkingLot"
+                                (click)="onSelect(parkingLot)">
+                                <span>{{parkingLot.lotName}}</span>
+                            </li>
+                        </ul>
                     </div>
                     <!-- Right-side content -->
                     <div class="col s12 l8">
@@ -67,18 +67,88 @@
         </div>
     </div>
     <!-- Inspectors tab -->
-    <div id="inspectors" class="col s12">
-        <div class="card grey lighten-3">
-            <div class="card-content">
-                Inspectors
+    <div id="inspectors">
+        <div class="card white">
+            <div class="row">
+                <div class="card-content">
+                    <!-- Left-side content -->
+                    <div class="col s12 l4">
+                        <!-- Lots card -->
+                        <div class="input-field">  
+                            <input type="text" placeholder="&#xF002; Search inspectors"
+                                style="font-family: Arial, FontAwesome"/>
+                        </div>
+                        <ul class="collection card">
+                            <!--<li *ngFor="let inspector of inspectors class="collection-item"
+                                [class.active]="inspector === selectedInspector"
+                                (click)="onSelect(inspector)">
+                                <span>{{inspector.name}}</span>
+                            </li>-->
+                            <li class="collection-item">
+                                Kyle Hayes
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Right-side content -->
+                    <div class="col s12 l8">
+                        <!-- Lot Details card -->
+                        <div class="card blue">
+                            <div class="card-content">
+                                <span class="card-title white-text">Inspector Details</span>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item">
+                                    <!--<inspector-detail [inspector]="selectedInspector"></inspector-detail>-->
+                                    <span>Test</span>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Requests tab -->
-    <div id="requests" class="col s12">
-        <div class="card grey lighten-3">
-            <div class="card-content">
-                Requests
+    <div id="requests">
+        <div class="card white">
+            <div class="row">
+                <div class="card-content">
+                    <!-- Left-side content -->
+                    <div class="col s12 l4">
+                        <!-- Lots Requests card -->
+                        <h4>Current Lot Requests</h4>
+                        
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn modal-trigger" (click)="openModal()">Modal</a>
+                         
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal bottom-sheet" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+                          <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                          </div>
+                          <div class="modal-footer">
+                            <a class="waves-effect waves-green btn-flat" (click)="closeModal()">Close</a>
+                            <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                          </div>
+                        </div>
+
+                        <div class="card grey lighten-3">
+                            <div class="card-content">  
+                                <span><b>Request 1</b></span>
+                            </div>
+                        </div>
+                        <div class="card grey lighten-3">
+                            <div class="card-content">  
+                                <span><b>Request 2</b></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right-side content -->
+                    <div class="col s12 l8">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
