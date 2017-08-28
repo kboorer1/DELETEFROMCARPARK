@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ParkingLot } from '../../../models/parking-lot';
+import { ParkingLot } from './../models/parking-lot';
 
 @Injectable()
 export class ParkingLotService {
