@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ParkingLot } from '../../../models/parking-lot';
-import { ParkingLotService } from './parking-lot-service';
+import { ParkingLotService } from '../../../api';
 import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
