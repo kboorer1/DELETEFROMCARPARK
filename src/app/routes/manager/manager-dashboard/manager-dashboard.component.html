@@ -16,17 +16,17 @@
                     <!-- Left-side content -->
                     <div class="col s12 l4">
                         <!-- Lots card -->
-                        <div class="card blue">
-                            <div class="card-content">
-                                <span class="card-title white-text">Parking Lots</span>
-                            </div>
-                            <ul class="collection">
-                                <li *ngFor="let parkingLot of parkingLots" class="collection-item"
-                                    (click)="onSelect(parkingLot)">
-                                    <span>{{parkingLot.lotName}}</span>
-                                </li>
-                            </ul> 
+                        <div class="input-field">  
+                            <input type="text" placeholder="&#xF002; Search parking lots"
+                                style="font-family: Arial, FontAwesome"/>
                         </div>
+                        <ul class="collection card">
+                            <li *ngFor="let parkingLot of parkingLots" class="collection-item"
+                                [class.active]="parkingLot === selectedParkingLot"
+                                (click)="onSelect(parkingLot)">
+                                <span>{{parkingLot.lotName}}</span>
+                            </li>
+                        </ul>
                     </div>
                     <!-- Right-side content -->
                     <div class="col s12 l8">
@@ -67,18 +67,172 @@
         </div>
     </div>
     <!-- Inspectors tab -->
-    <div id="inspectors" class="col s12">
-        <div class="card grey lighten-3">
-            <div class="card-content">
-                Inspectors
+    <div id="inspectors">
+        <div class="card white">
+            <div class="row">
+                <div class="card-content">
+                    <!-- Left-side content -->
+                    <div class="col s12 l4">
+                        <!-- Lots card -->
+                        <div class="input-field">  
+                            <input type="text" placeholder="&#xF002; Search inspectors"
+                                style="font-family: Arial, FontAwesome"/>
+                        </div>
+                        <ul class="collection card">
+                            <!--<li *ngFor="let inspector of inspectors class="collection-item"
+                                [class.active]="inspector === selectedInspector"
+                                (click)="onSelect(inspector)">
+                                <span>{{inspector.name}}</span>
+                            </li>-->
+                            <li class="collection-item">
+                                Kyle Hayes
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Right-side content -->
+                    <div class="col s12 l8">
+                        <!-- Lot Details card -->
+                        <div class="card blue">
+                            <div class="card-content">
+                                <span class="card-title white-text">Inspector Details</span>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item">
+                                    <!--<inspector-detail [inspector]="selectedInspector"></inspector-detail>-->
+                                    <span>Test</span>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Requests tab -->
-    <div id="requests" class="col s12">
-        <div class="card grey lighten-3">
-            <div class="card-content">
-                Requests
+    <div id="requests">
+        <div class="card white">
+            <div class="row">
+                <div class="card-content">
+                    <!-- Left-side content -->
+                    <div class="col s12 l4">
+                        <!-- Lots card -->
+                        <div class="input-field">  
+                            <input type="text" placeholder="&#xF002; Search parking lot requests"
+                                style="font-family: Arial, FontAwesome"/>
+                        </div>
+                        <ul class="collection card">
+                            <!--<li *ngFor="let inspector of inspectors class="collection-item"
+                                [class.active]="inspector === selectedInspector"
+                                (click)="onSelect(inspector)">
+                                <span>{{inspector.name}}</span>
+                            </li>-->
+                            <li class="collection-item">
+                                23-Aug-2017 - UON Lot A
+                            </li>
+                        </ul>
+                        <!-- Modal Trigger -->
+                        <button class="waves-effect waves-light btn modal-trigger btn" (click)="openModal()">Create Lot Request</button>
+                         
+                        <!-- Modal Structure -->
+                         <div id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions">
+                          <div class="modal-content">
+                                <h4>Create Lot Request</h4>
+                                <p>
+                                    You can submit a request to register a new parking lot with Parking ParkingPal
+                                    by filling out this form. Be sure to attach any relevant documentation for
+                                    proving your ownership of the parking lot.
+                                </p>
+                            <div class="section">
+                                <div class="row">
+                                    <form action="#">
+                                        <div>
+                                            <div class="input-field col m6 s12">
+                                                <input
+                                                    id="carpark_name"
+                                                    type="text"
+                                                    class="validate">
+                                                <label for="carpark_name">
+                                                    Carpark Name
+                                                </label>
+                                            </div>
+                                            <div class="input-field col m6 s12">
+                                                <input
+                                                    id="carpark_address"
+                                                    type="text"
+                                                    class="validate">
+                                                <label for="carpark_address">
+                                                    Carpark Address
+                                                </label>
+                                            </div>
+                                            <div class="input-field col m4 s12">
+                                                <input
+                                                    id="carpark_time_open"
+                                                    type="text"
+                                                    class="timepicker">
+                                                <label for="carpark_time_open">
+                                                    Open Time
+                                                </label>
+                                            </div>
+                                            <div class="input-field col m4 s12">
+                                                <input
+                                                    id="carpark_time_close"
+                                                    type="text"
+                                                    class="validate">
+                                                <label for="carpark_time_close">
+                                                    Close Time
+                                                </label>
+                                            </div>
+                                            <div class="input-field col m4 s12">
+                                                <input
+                                                    id="carpark_rate"
+                                                    type="number"
+                                                    class="validate">
+                                                <label for="carpark_rate">
+                                                    Hourly rate
+                                                </label>
+                                            </div>
+                                            <div class="file-field input-field col m12 s12">
+                                                <div class="btn">
+                                                    <span>File</span>
+                                                    <input type="file" multiple>
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate"
+                                                        type="text"
+                                                        placeholder="Upload one or more files">
+                                                </div>
+                                            </div>                             
+                                        </div>
+                                        <div class="col s12">
+                                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                            <button class="btn waves-effect waves-light" (click)="closeModal()">Cancel
+                                                <i class="material-icons right">close</i>
+                                            </button>
+                                        </div>  
+                                    </form>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Right-side content -->
+                    <div class="col s12 l8">
+                        <!-- Lot Request Details card -->
+                        <div class="card blue">
+                            <div class="card-content">
+                                <span class="card-title white-text">Lot Request Details</span>
+                            </div>
+                            <ul class="collection">
+                                <li class="collection-item">
+                                    <!--<inspector-detail [inspector]="selectedInspector"></inspector-detail>-->
+                                    <span>Lot request details</span>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

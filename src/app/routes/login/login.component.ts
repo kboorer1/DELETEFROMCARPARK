@@ -3,7 +3,7 @@ import { TestService } from '../../api/test.service';
 import { Configuration } from '../../app.constants'; 
 
 @Component({
-  template: `<router-outlet></router-outlet>`,
+  selector: 'login', 
   providers: [TestService, Configuration]
 })
 export class LoginComponent implements OnInit {
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor( private testService: TestService) {}
 
   ngOnInit() {
-    console.log('ng on in it login component');
+    console.log('ng on in it');
     this.testService.getTests().subscribe( resp => {
       console.log(resp);
       this.resp = resp;
