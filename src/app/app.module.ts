@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
  import { Configuration } from './app.constants';
  import { LoginNavBarComponent } from './components/login-nav-bar/login-nav-bar.component';
 import { LoginModule } from './routes/login/login.module';
+import { RegisteredUserModule } from './routes/registered-user/registered-user.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AlertComponent } from './api/auth-guard/alert.component';
 import { AuthGuard, AlertService, AuthenticationService, UserService, fakeBackendProvider } from './api/index';
@@ -26,6 +27,7 @@ import { BaseRequestOptions } from '@angular/http';
   ],
   imports: [
     LoginModule,
+    RegisteredUserModule,
     BrowserModule,
     FormsModule,
     HttpModule,

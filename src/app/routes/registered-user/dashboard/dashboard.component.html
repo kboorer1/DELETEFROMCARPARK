@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="card col s12">
+            <div class="card-title">
+                Recent Tickets 
+            </div>
+            <div class="card-content">
+                <table>
+                    <thead>
+                        <th>Rego</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Location</th>
+                        <th>Extend</th>
+                    </thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><i (click)="extendTicket()" class="fa fa-plus" aria-hidden="true" style="color: green; cursor: pointer;"></i></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><i (click)="extendTicket()" class="fa fa-plus" aria-hidden="true" style="color: green; cursor: pointer;"></i></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><i (click)="extendTicket()" class="fa fa-plus" aria-hidden="true" style="color: green; cursor: pointer;"></i></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><i (click)="extendTicket()" class="fa fa-plus" aria-hidden="true" style="color: green; cursor: pointer;"></i></th>
+                    </tr>
+                </table>    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="extendTicketModal" class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="extendTicketModal">
+asfsdfsdf
+    <div class="modal-footer">
+        <div class="btn" (click)="cancelExtendTicketModal()">Cancel</div>
+        <div class="btn" (click)="saveExtendTicketModal()">Save</div>
+    </div>
+</div>
